@@ -11,7 +11,8 @@ function Profile() {
     console.log("currentUserId: ", currentUserId);
 
     if (!currentUserId) {
-      navigate("/login");
+    //   navigate("/login");
+    alert("you are not logged in!! This is Dummy Profile, Please Create Account and Login to see Dynamic Profile");
     } else {
       const userData = JSON.parse(currentUserId);
       console.log("userData: ", userData);
@@ -51,7 +52,7 @@ function Profile() {
           </button>
         </div>
 
-        {user && (
+        {/* {user && ( */}
           <div className="flex px-6 gap-x-7 mt-7">
             <div className="relative">
               <img
@@ -76,14 +77,14 @@ function Profile() {
             </div>
             <div>
               <h1 className="font-rubik text-15px leading-[19px] text-text-main tracking-normal font-medium capitalize">
-                {user.fullName}
+                {user?.fullName || "Mary Doe"}
               </h1>
               <p className="font-rubik text-14px leading-[19px] text-text-main tracking-normal font-normal capitalize">
-                {user.email}
+                {user?.email || "Mary@Gmail.com"}
               </p>
             </div>
           </div>
-        )}
+        {/* )} */}
 
         <p className="font-rubik text-[14px] leading-[22px] text-text-main tracking-normal capitalize px-6 mt-7 mx-auto">
           Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam
@@ -107,7 +108,7 @@ function Profile() {
           </button>
         </div>
 
-        {user && (
+        {/* {user && ( */}
           <div className="flex px-6 gap-x-7 mt-7">
             <div className="relative">
               <img
@@ -133,10 +134,10 @@ function Profile() {
             <div className="flex">
               <div className="w-[30%]">
                 <h1 className="font-rubik text-[17px] leading-[19px] text-text-main tracking-normal font-medium capitalize">
-                  <span className="font-bold text-[20px]">Name: </span>{user.fullName}
+                  <span className="font-bold text-[20px]">Name: </span>{user?.fullName || "Mary Doe"}
                 </h1>
                 <p className="font-rubik text-[17px] leading-[19px] text-text-main tracking-normal font-normal capitalize">
-                <span className="font-bold text-[20px]">Email: </span>{user.email}
+                <span className="font-bold text-[20px]">Email: </span>{user?.email || "Mary@Gmail.com"}
                 </p>
               </div>
               <p className="w-[70%] border-[1px] border-[#ccc] font-rubik text-[14px] leading-[22px] text-text-main tracking-normal capitalize px-6 mt-7 mx-auto">
@@ -146,7 +147,7 @@ function Profile() {
               </p>
             </div>
           </div>
-        )}
+        {/* )} */}
       </div>
     </div>
   );
